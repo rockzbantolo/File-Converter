@@ -1,0 +1,11 @@
+c:\users\rockz\documents\visual studio 2017\Projects\FileConverter\FileConverter\obj\Debug\FileConverter.csprojResolveAssemblyReference.cache
+c:\users\rockz\documents\visual studio 2017\Projects\FileConverter\FileConverter\obj\Debug\FileConverter.Properties.Resources.resources
+c:\users\rockz\documents\visual studio 2017\Projects\FileConverter\FileConverter\obj\Debug\FileConverter.csproj.GenerateResource.Cache
+c:\users\rockz\documents\visual studio 2017\Projects\FileConverter\FileConverter\bin\Debug\FileConverter.exe.config
+c:\users\rockz\documents\visual studio 2017\Projects\FileConverter\FileConverter\bin\Debug\FileConverter.exe
+c:\users\rockz\documents\visual studio 2017\Projects\FileConverter\FileConverter\bin\Debug\FileConverter.pdb
+c:\users\rockz\documents\visual studio 2017\Projects\FileConverter\FileConverter\obj\Debug\FileConverter.exe
+c:\users\rockz\documents\visual studio 2017\Projects\FileConverter\FileConverter\obj\Debug\FileConverter.pdb
+c:\users\rockz\documents\visual studio 2017\Projects\FileConverter\FileConverter\bin\Debug\Spire.XLS.dll
+c:\users\rockz\documents\visual studio 2017\Projects\FileConverter\FileConverter\bin\Debug\Spire.XLS.xml
+c:\users\rockz\documents\visual studio 2017\Projects\FileConverter\FileConverter\obj\Debug\FileConverter.Frm_Main.resources

@@ -9,3 +9,14 @@ c:\users\rockz\documents\visual studio 2017\Projects\FileConverter\FileConverter
 c:\users\rockz\documents\visual studio 2017\Projects\FileConverter\FileConverter\bin\Debug\Spire.XLS.dll
 c:\users\rockz\documents\visual studio 2017\Projects\FileConverter\FileConverter\bin\Debug\Spire.XLS.xml
 c:\users\rockz\documents\visual studio 2017\Projects\FileConverter\FileConverter\obj\Debug\FileConverter.Frm_Main.resources
+C:\Users\rockz\Documents\GitHub\FCS\FileConverter\bin\Debug\FileConverter.exe.config
+C:\Users\rockz\Documents\GitHub\FCS\FileConverter\bin\Debug\FileConverter.exe
+C:\Users\rockz\Documents\GitHub\FCS\FileConverter\bin\Debug\FileConverter.pdb
+C:\Users\rockz\Documents\GitHub\FCS\FileConverter\bin\Debug\Spire.XLS.dll
+C:\Users\rockz\Documents\GitHub\FCS\FileConverter\bin\Debug\Spire.XLS.xml
+C:\Users\rockz\Documents\GitHub\FCS\FileConverter\obj\Debug\FileConverter.csprojResolveAssemblyReference.cache
+C:\Users\rockz\Documents\GitHub\FCS\FileConverter\obj\Debug\FileConverter.Frm_Main.resources
+C:\Users\rockz\Documents\GitHub\FCS\FileConverter\obj\Debug\FileConverter.Properties.Resources.resources
+C:\Users\rockz\Documents\GitHub\FCS\FileConverter\obj\Debug\FileConverter.csproj.GenerateResource.Cache
+C:\Users\rockz\Documents\GitHub\FCS\FileConverter\obj\Debug\FileConverter.exe
+C:\Users\rockz\Documents\GitHub\FCS\FileConverter\obj\Debug\FileConverter.pdb

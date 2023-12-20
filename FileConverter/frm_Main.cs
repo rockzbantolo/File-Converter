@@ -6,6 +6,8 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Spire.Xls;
+using System.Threading;
+using System.Reflection;
 
 namespace FileConverter
 {
@@ -17,6 +19,14 @@ namespace FileConverter
         public Frm_Main()
         {
             InitializeComponent();
+            DoubleBuffer(Dgv_Details);
+        }
+
+        private static void DoubleBuffer(Control ctrl)
+        {
+            typeof(Control).InvokeMember("DoubleBuffered",
+                BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
+                null, ctrl, new object[] { true });
         }
 
         private void Btn_SelectFile_Click(object sender, EventArgs e)
@@ -81,6 +91,12 @@ namespace FileConverter
                 {
                     row.Cells[3].Value = $"{progressPercentage}%";
                     row.Cells[2].Value = $"{Location}";
+
+                    if (progressPercentage % 10 == 0)
+                    {
+                        Dgv_Details.Refresh();
+                    }
+
                     break;
                 }
             }

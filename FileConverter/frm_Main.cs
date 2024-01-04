@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Spire.Xls;
-using System.Threading;
 using System.Reflection;
 
 namespace FileConverter
@@ -41,12 +39,9 @@ namespace FileConverter
                     // Check if the file already exists in DataGridView
                     if (!FileExistsInDataGridView(fileName))
                     {
-                        Dgv_Details.Rows.Add(filePath, fileName, "","0%");
+                        Dgv_Details.Rows.Add(filePath, fileName,  "", "Csv","0%");
                         Dgv_Details.ClearSelection();
                         Btn_Convert.Enabled = true;
-                        Cmb_From.Visible = true;
-                        Cmb_To.Visible = true;
-                        Lb_To.Visible = true;
                     }
                     else
                     {
@@ -75,11 +70,6 @@ namespace FileConverter
                 ConvertFiles(Dgv_Details);
 
                 Btn_Convert.Enabled = false;
-                Cmb_From.SelectedIndex = -1;
-                Cmb_To.SelectedIndex = -1;
-                Cmb_From.Visible = false;
-                Cmb_To.Visible = false;
-                Lb_To.Visible = false;
             }
         }
 
@@ -180,9 +170,29 @@ namespace FileConverter
             {
                 // Get Path
                 var filePath = row.Cells[0].Value.ToString();
+                var OutputFile = row.Cells[3].Value.ToString();
 
-                // Convert
-                ConvertExcelToCsv(filePath, ConvertedFilePath);
+                // Determine the file extension
+                // string fileExtension = Path.GetExtension(filePath).ToLower();
+
+                switch (OutputFile)
+                {
+
+                    case "Csv":
+                        break;
+
+                    case "Text":
+                        break;
+
+                    case "Excel":
+                        ConvertExcelToCsv(filePath, ConvertedFilePath);
+                        break;
+
+                    default:
+                        MessageBox.Show("File not supported", "Output File", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                }
+
             }
         }
 
@@ -270,11 +280,6 @@ namespace FileConverter
         {
             Dgv_Details.Rows.Clear();
             Btn_Convert.Enabled = false;
-            Cmb_From.SelectedIndex = -1;
-            Cmb_To.SelectedIndex = -1;
-            Cmb_From.Visible = false;
-            Cmb_To.Visible = false;
-            Lb_To.Visible = false;
         }
 
         private void Btn_Remove_Click(object sender, EventArgs e)

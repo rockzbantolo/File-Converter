@@ -39,7 +39,7 @@ namespace FileConverter
                     // Check if the file already exists in DataGridView
                     if (!FileExistsInDataGridView(fileName))
                     {
-                        Dgv_Details.Rows.Add(filePath, fileName,  "", "Csv","0%");
+                        Dgv_Details.Rows.Add(filePath, fileName,  "","0%");
                         Dgv_Details.ClearSelection();
                         Btn_Convert.Enabled = true;
                     }
@@ -65,11 +65,18 @@ namespace FileConverter
 
         private void Btn_Convert_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(Cmb_Output.Text))
+            {
+                MessageBox.Show("Please select the output format", "Output Format", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             if (Dgv_Details.Rows.Count > 0)
             {
                 ConvertFiles(Dgv_Details);
 
                 Btn_Convert.Enabled = false;
+                Dgv_Details.ReadOnly = true;
             }
         }
 
@@ -80,12 +87,13 @@ namespace FileConverter
                 if (row.Cells[1].Value.ToString() == fileName)
                 {
                     row.Cells[3].Value = $"{progressPercentage}%";
-                    row.Cells[2].Value = $"{Location}";
 
                     if (progressPercentage % 10 == 0)
                     {
                         Dgv_Details.Refresh();
                     }
+
+                    row.Cells[2].Value = $"{Location}";
 
                     break;
                 }
@@ -169,23 +177,40 @@ namespace FileConverter
             foreach (DataGridViewRow row in dataGridView.Rows)
             {
                 // Get Path
-                var filePath = row.Cells[0].Value.ToString();
-                var OutputFile = row.Cells[3].Value.ToString();
+                var FilePath       = row.Cells[0].Value.ToString();
+                var OutputFile     = Cmb_Output.Text;
+                var FileExtenstion = Path.GetExtension(FilePath);
 
-                // Determine the file extension
-                // string fileExtension = Path.GetExtension(filePath).ToLower();
-
+                // Check file to convert into.
                 switch (OutputFile)
                 {
 
-                    case "Csv":
+                    case "CSV":
+
+                        // Check the file you need to convert
+                        switch(FileExtenstion)
+                        {
+                            case ".xls":
+                            case ".xlsx":
+                                ConvertExcelToCsv(FilePath, ConvertedFilePath);
+                                break;
+
+                            case ".text":
+
+                                break;
+
+                            default:
+                                MessageBox.Show("File is already a csv file","File Convertion",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                break;
+                        }
+
                         break;
 
-                    case "Text":
+                    case "TEXT":
                         break;
 
-                    case "Excel":
-                        ConvertExcelToCsv(filePath, ConvertedFilePath);
+                    case "EXCEL":
+                   
                         break;
 
                     default:
@@ -225,7 +250,8 @@ namespace FileConverter
                 { ",", "" },
                 { "'", "" },
                 { ";", "" },
-                { "  ", " " }
+                { "  ", " " },
+                { "\"", "" }
             };
 
             string result = RemoveChars(str, replacements).ToUpper();
@@ -287,6 +313,34 @@ namespace FileConverter
             if (Dgv_Details.SelectedRows.Count > 0)
             {
                 Dgv_Details.Rows.RemoveAt(Dgv_Details.SelectedRows[0].Index);
+            }
+        }
+
+        private void Dgv_Details_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                string sFilePath = Dgv_Details.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+                if (Dgv_Details.Rows[e.RowIndex].Cells[3].Value.ToString() != "100%")
+                {
+                    return;
+                }
+
+                if (File.Exists(sFilePath))
+                {
+                    Frm_Preview Preview = new Frm_Preview();
+                    Preview.FilePath = sFilePath;
+                    Preview.Show();
+                }
+                else
+                {
+                    MessageBox.Show("File does not exist", "File Preview", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid selection", "File Preview", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -20,3 +20,4 @@ C:\Users\rockz\Documents\GitHub\FCS\FileConverter\obj\Debug\FileConverter.Proper
 C:\Users\rockz\Documents\GitHub\FCS\FileConverter\obj\Debug\FileConverter.csproj.GenerateResource.Cache
 C:\Users\rockz\Documents\GitHub\FCS\FileConverter\obj\Debug\FileConverter.exe
 C:\Users\rockz\Documents\GitHub\FCS\FileConverter\obj\Debug\FileConverter.pdb
+C:\Users\rockz\Documents\GitHub\FCS\FileConverter\obj\Debug\FileConverter.Frm_Preview.resources

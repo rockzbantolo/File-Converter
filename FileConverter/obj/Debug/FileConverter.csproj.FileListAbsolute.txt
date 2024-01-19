@@ -21,3 +21,7 @@ C:\Users\rockz\Documents\GitHub\FCS\FileConverter\obj\Debug\FileConverter.csproj
 C:\Users\rockz\Documents\GitHub\FCS\FileConverter\obj\Debug\FileConverter.exe
 C:\Users\rockz\Documents\GitHub\FCS\FileConverter\obj\Debug\FileConverter.pdb
 C:\Users\rockz\Documents\GitHub\FCS\FileConverter\obj\Debug\FileConverter.Frm_Preview.resources
+C:\Users\rockz\Documents\GitHub\FCS\FileConverter\bin\Debug\FileConverter.exe.manifest
+C:\Users\rockz\Documents\GitHub\FCS\FileConverter\bin\Debug\FileConverter.application
+C:\Users\rockz\Documents\GitHub\FCS\FileConverter\obj\Debug\FileConverter.exe.manifest
+C:\Users\rockz\Documents\GitHub\FCS\FileConverter\obj\Debug\FileConverter.application

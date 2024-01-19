@@ -36,13 +36,13 @@
             this.Btn_SelectFile = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.Dgv_Details = new System.Windows.Forms.DataGridView();
-            this.Btn_Clear = new System.Windows.Forms.Button();
-            this.Btn_Remove = new System.Windows.Forms.Button();
-            this.Cmb_Output = new System.Windows.Forms.ComboBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Btn_Clear = new System.Windows.Forms.Button();
+            this.Btn_Remove = new System.Windows.Forms.Button();
+            this.Cmb_Output = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Details)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,10 +128,35 @@
             this.Dgv_Details.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Dgv_Details.RowTemplate.Height = 35;
             this.Dgv_Details.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Details.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.Dgv_Details.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_Details.Size = new System.Drawing.Size(887, 411);
             this.Dgv_Details.TabIndex = 8;
             this.Dgv_Details.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Details_CellDoubleClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "File Path";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 300;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "File Name";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 230;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "File Location";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 255;
+            // 
+            // Column3
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column3.HeaderText = "Progress";
+            this.Column3.Name = "Column3";
             // 
             // Btn_Clear
             // 
@@ -175,31 +200,6 @@
             this.Cmb_Output.Name = "Cmb_Output";
             this.Cmb_Output.Size = new System.Drawing.Size(885, 26);
             this.Cmb_Output.TabIndex = 11;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "File Path";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 300;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "File Name";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 230;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "File Location";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 255;
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column3.HeaderText = "Progress";
-            this.Column3.Name = "Column3";
             // 
             // Frm_Main
             // 
